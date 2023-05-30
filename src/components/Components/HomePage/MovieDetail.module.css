@@ -25,3 +25,8 @@
   width: 50%;
   max-height: 100%;
 }
+
+svg {
+  width: 0.5rem;
+  height: 0.5rem;
+}

@@ -28,6 +28,7 @@ const Movie = (props) => {
       props.onClicked(data[index], true);
       setClickedMovie(data[index]);
       setIsClickMovie(true);
+      // setIsClickMovie(false);
     }
   };
 

@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "../../UI/Modal";
 import classes from "./Popup.module.css";
+import ResultList from "../SearchPage/ResultList";
 
 const Popup = (props) => {
+  //   const [input, setInput] = useState("");
+  //   const [isValid, setIsValid] = useState(true);
+  //   const [result, setResult] = useState(<h2>Search Result</h2>);
+
+  //   // Kiểm tra valid input
+  //   const inputChangeHandler = (event) => {
+  //     if (event.target.value.trim().length > 0) {
+  //       setIsValid(true);
+  //     }
+  //     setInput(event.target.value);
+  //   };
+
+  //   // Sự kiện click search
+  //   const submitHandler = (event) => {
+  //     event.preventDefault();
+  //     if (input.trim().length === 0) {
+  //       setIsValid(false);
+  //       return;
+  //     }
+  //     setResult(<ResultList query={input} />);
+  //   };
+  const onClickSearchHandlerModal = () => {
+    window.location.replace("/search");
+    console.log("aaaa");
+  };
   return (
     <Modal className={classes.search} onClose={props.onClose}>
       <form
@@ -35,7 +61,11 @@ const Popup = (props) => {
           {/* <button className={classes.btnreset} type="reset">
             Reset
           </button> */}
-          <button className={classes.btnsearch} type="submit">
+          <button
+            className={classes.btnsearch}
+            type="submit"
+            onClick={onClickSearchHandlerModal}
+          >
             Search
           </button>
         </div>

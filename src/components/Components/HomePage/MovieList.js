@@ -3,7 +3,7 @@ import Movie from "./Movie";
 import MovieDetail from "./MovieDetail";
 import classes from "./MovieList.module.css";
 
-const MovieList = () => {
+const MovieList = (props) => {
   const API_KEY = "0903b7f1a10ef955b51f967e6fd6c6cb";
   const [clickedMovie, setClickedMovie] = useState("");
   const [isClickMovie, setIsClickMovie] = useState(false);
@@ -49,7 +49,11 @@ const MovieList = () => {
 
       {
         // Kiểm tra trạng thái hiển thị movie detail
-        isClickMovie ? <MovieDetail movie={clickedMovie} /> : ""
+        isClickMovie ? (
+          <MovieDetail movie={clickedMovie} hidden={onClickHandler} />
+        ) : (
+          ""
+        )
       }
     </div>
   );

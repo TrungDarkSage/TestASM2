@@ -54,17 +54,33 @@ const MovieDetail = (props) => {
 
   return (
     <div className={classes.moviedetail}>
+      {" "}
       <div>
         <h1>{props.movie.name || props.movie.title}</h1>
-        <p>
-          <strong>
-            Release Date:
-            {props.movie.release_date || props.movie.first_air_date}
-          </strong>
-        </p>
-        <p>
-          <strong>Vote: {props.movie.vote_average}/10</strong>
-        </p>
+        <div>
+          <p>
+            <strong>
+              Release Date :
+              {props.movie.release_date || props.movie.first_air_date}
+            </strong>{" "}
+            <svg
+              className="svg-inline--fa fa-times fa-w-11"
+              fill="#ccc"
+              aria-hidden="true"
+              data-prefix="fas"
+              data-icon="cancel"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 352 512"
+              onClick={props.hidden}
+            >
+              <path d="M213.9 256l131.6-131.6c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L192 199.1 60.4 67.5c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9L138.1 256 6.3 387.6c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0L192 312.9l131.6 131.6c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L213.9 256z"></path>{" "}
+            </svg>
+          </p>
+          <p>
+            <strong>Vote: {props.movie.vote_average}/10</strong>
+          </p>
+        </div>
         <p>{props.movie.overview}</p>
       </div>
       {trailer}
