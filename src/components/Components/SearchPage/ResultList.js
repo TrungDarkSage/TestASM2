@@ -35,7 +35,7 @@ const ResultList = (props) => {
 
   return (
     <div className={classes.result}>
-      <h2>Search Result</h2>
+      <h1>Search Result</h1>
       <div className={classes.movie}>
         {data.length === 0 ? (
           <h3>Not Found Movie</h3>

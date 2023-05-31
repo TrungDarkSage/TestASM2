@@ -36,7 +36,7 @@ body {
 
 .searchform.invalid input {
   border-color: red;
-  background: rgb(248, 180, 180);
+  background: rgb(172, 47, 47);
 }
 .searchform > div:nth-child(2) {
   display: flex;

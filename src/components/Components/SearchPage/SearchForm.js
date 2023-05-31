@@ -1,40 +1,47 @@
-import { useState } from "react";
+import { useContext } from "react";
 import ResultList from "./ResultList";
 import classes from "./SearchForm.module.css";
-
+import ExampleContext from "../../Store/Context";
 const SearchForm = () => {
-  const [input, setInput] = useState("");
-  const [isValid, setIsValid] = useState(true);
-  const [result, setResult] = useState(<h2>Search Result</h2>);
+  // const [input, setInput] = useState("");
+  // const [isValid, setIsValid] = useState(true);
+  const ctx = useContext(ExampleContext);
+  // const [result, setResult] = useState(<h2>Search Result</h2>);
 
-  // Kiểm tra valid input
-  const inputChangeHandler = (event) => {
-    if (event.target.value.trim().length > 0) {
-      setIsValid(true);
-    }
-    setInput(event.target.value);
-  };
+  // // Kiểm tra valid input
+  // const inputChangeHandler = (event) => {
+  //   if (event.target.value.trim().length > 0) {
+  //     setIsValid(true);
+  //   }
+  //   setInput(event.target.value);
+  // };
 
-  // Sự kiện click search
-  const submitHandler = (event) => {
-    event.preventDefault();
-    if (input.trim().length === 0) {
-      setIsValid(false);
-      return;
-    }
-    setResult(<ResultList query={input} />);
-  };
+  // // Sự kiện click search
+  // const submitHandler = (event) => {
+  //   event.preventDefault();
+  //   if (input.trim().length === 0) {
+  //     setIsValid(false);
+  //     return;
+  //   }
+  //   setResult(<ResultList query={input} />);
+  // };
 
-  // Sự kiện click reset
-  const resetHandler = () => {
-    setIsValid(true);
-    setInput("");
-    setResult(<h2>Search Result</h2>);
-  };
+  // // Sự kiện click reset
+  // const resetHandler = () => {
+  //   setIsValid(true);
+  //   setInput("");
+  //   setResult(<h2>Search Result</h2>);
+  // };
 
   return (
     <div className={classes.search}>
-      <form
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      {/* <form
         className={`${classes.searchform} ${!isValid && classes.invalid}`}
         onSubmit={submitHandler}
         onReset={resetHandler}
@@ -66,8 +73,10 @@ const SearchForm = () => {
             Search
           </button>
         </div>
-      </form>
-      {result}
+      </form> */}
+      {/* {result} */}
+      {/* <ResultList query={input} /> */}
+      <ResultList query={ctx.valueInput} />
     </div>
   );
 };
