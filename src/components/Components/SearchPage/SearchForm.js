@@ -76,7 +76,7 @@ const SearchForm = () => {
       </form> */}
       {/* {result} */}
       {/* <ResultList query={input} /> */}
-      <ResultList query={ctx.valueInput} />
+      <ResultList query={ctx.input} />
     </div>
   );
 };
