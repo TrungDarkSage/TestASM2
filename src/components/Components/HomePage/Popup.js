@@ -17,7 +17,8 @@ const Popup = (props) => {
       setIsValid(true);
     }
     setInput(event.target.value);
-    props.onInputChange(input);
+
+    // console.log(props);
   };
 
   // Sự kiện click search
@@ -28,6 +29,7 @@ const Popup = (props) => {
       return;
     } else {
       search("search");
+      console.log(input);
     }
   };
   // const onClickSearchHandlerModal = () => {
